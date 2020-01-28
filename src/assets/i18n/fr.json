@@ -1,0 +1,10 @@
+{
+    "MenuTitle": {
+        "Home": "Accueil",
+        "About": "À propos de nous"
+    },
+    "PageTitle": {
+        "Home": "Page d'accueil",
+        "About": "Page À propos de nous"
+    }
+}

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="'/' | localize">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/' | localize">{{ 'MenuTitle.Home' | translate }} <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/about' | localize">{{ 'MenuTitle.About' | translate }}</a>
+                </li>
+            </ul>
+            <div class="my-2 my-lg-0">
+                <select (change)="languageChange($event)">
+                    <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === langOptions">{{ toUpperCase(lang) }}</option>
+                </select>
+            </div>        
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
